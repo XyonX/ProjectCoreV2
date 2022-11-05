@@ -72,3 +72,16 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Content/DreamscapeSeries/
+Content/Stylized_Forest/
+Plugins/CoreContent/
+Plugins/Developer/
+Content/Megascans/
+Content/MSPresets/
+Content/StylizedMaterials/
+Content/BlackAlder
+Content/Environment
+Content/MS_Stump
+Content/PhotoR_Backgrounds
+Content/PN_OpenWorldFoliage
+Content/Maps

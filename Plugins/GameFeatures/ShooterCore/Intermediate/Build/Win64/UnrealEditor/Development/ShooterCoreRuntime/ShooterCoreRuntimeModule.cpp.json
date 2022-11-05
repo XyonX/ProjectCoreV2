@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\projects\\projectcore\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\private\\shootercoreruntimemodule.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\projects\\projectcore\\intermediate\\build\\win64\\coreeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\projects\\projectcore\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\unrealeditor\\development\\shootercoreruntime\\definitions.shootercoreruntime.h",
+            "c:\\projects\\projectcore\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\public\\shootercoreruntimemodule.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

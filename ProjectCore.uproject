@@ -1,0 +1,68 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.0",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "CoreGame",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"DeveloperSettings",
+				"Engine",
+				"ModularGameplayActors",
+				"CommonGame",
+				"ModularGameplay",
+				"CoreAbilitySystem",
+				"EnhancedInput"
+			]
+		},
+		{
+			"Name": "CoreEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+		{
+			"Name": "GameFeatures",
+			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "ShooterCore",
+			"Enabled": true
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
+		},
+		{
+			"Name": "WaterExtras",
+			"Enabled": true
+		},
+		{
+			"Name": "MovieRenderPipeline",
+			"Enabled": true
+		},
+		{
+			"Name": "Volumetrics",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemSteam",
+			"Enabled": true
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "CoreAbilitySystem",
+	"Description": "Manages Ability System || Recreation of Gameplay ability Syatem",
+	"Category": "Gameplay",
+	"CreatedBy": "joy",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CoreAbilitySystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "GameplayTagsEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		},
+		{
+			"Name": "DataRegistry",
+			"Enabled": true
+		}
+	]
+
+}
