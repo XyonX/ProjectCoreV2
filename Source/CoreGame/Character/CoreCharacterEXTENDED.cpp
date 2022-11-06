@@ -12,7 +12,11 @@
 ACoreCharacterEXTENDED::ACoreCharacterEXTENDED()
 {
 	
-	LocomotionComponent =CreateDefaultSubobject<ULocomotionComponent>("Locomotion Component");
+	/*LocomotionComponent =CreateDefaultSubobject<ULocomotionComponent>("Locomotion Component");
+	if(LocomotionComponent)
+	{
+		LocomotionComponent->RegisterComponent();
+	}*/
 	
 	
 }
@@ -21,6 +25,7 @@ void ACoreCharacterEXTENDED::BeginPlay()
 {
 	Super::BeginPlay();
 	PlayerControllerRef =Cast<ACorePlayerController>( UGameplayStatics::GetPlayerController(GetWorld(),0));
+
 }
 
 void ACoreCharacterEXTENDED::PawnClientRestart()
@@ -31,12 +36,13 @@ void ACoreCharacterEXTENDED::PawnClientRestart()
 		if(UEnhancedInputLocalPlayerSubsystem * Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
 			Subsystem->ClearAllMappings();
-			Subsystem->AddMappingContext(PlayerController->BaseMappingContext,PlayerController->BaseMappingPriority);
+			Subsystem->AddMappingContext(BaseMappingContext,BaseMappingPriority);
+			if(GEngine)
+            			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, TEXT("Context Binded From character class "));	
 		}
 		
-		
 	}
-	//LocomotionComponent->BindContextWithSubsystem(PlayerControllerRef);
+	//LocomotionComponent->BindContextWithSubsystem();
 }
 
 void ACoreCharacterEXTENDED::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -71,26 +77,25 @@ void ACoreCharacterEXTENDED::SetupPlayerInputComponent(UInputComponent* PlayerIn
 
 	//Make Sure We have an  enhanced input system
 	UEnhancedInputComponent* EnhancedInputComp =Cast <UEnhancedInputComponent>(PlayerInputComponent);
-	const ACorePlayerController*PlayerController =Cast <ACorePlayerController>(Controller);
-	if(IsValid(EnhancedInputComp) && IsValid(PlayerController))
+	if(IsValid(EnhancedInputComp) )
 	{
 
-		if(LocomotionComponent->MovementAction)
+		if(MovementAction)
 		{
-			EnhancedInputComp->BindAction(	PlayerController->MovementAction,ETriggerEvent::Triggered,this,&ACoreCharacterEXTENDED::EnhancedMove);
+			EnhancedInputComp->BindAction(	MovementAction,ETriggerEvent::Triggered,this,&ACoreCharacterEXTENDED::EnhancedMove);
 		}
-		if(LocomotionComponent->LookingAction)
+		if(LookingAction)
 		{
-			EnhancedInputComp->BindAction(	PlayerController->MovementAction,ETriggerEvent::Triggered,this,&ACoreCharacterEXTENDED::EnhancedLook);
+			EnhancedInputComp->BindAction(	LookingAction,ETriggerEvent::Triggered,this,&ACoreCharacterEXTENDED::EnhancedLook);
 		}
-		if(LocomotionComponent->JumpAction)
+		if(JumpAction)
 		{
-			EnhancedInputComp->BindAction(	PlayerController->MovementAction,ETriggerEvent::Started,this,&ACharacter::Jump);
-			EnhancedInputComp->BindAction(	PlayerController->MovementAction,ETriggerEvent::Completed,this,&ACharacter::StopJumping);
+			EnhancedInputComp->BindAction(	JumpAction,ETriggerEvent::Started,this,&ACharacter::Jump);
+			EnhancedInputComp->BindAction(	JumpAction,ETriggerEvent::Completed,this,&ACharacter::StopJumping);
 		}
 		
 	}
-	
+	//LocomotionComponent->BindKeyWithFunction(PlayerInputComponent);
 	
 }
 

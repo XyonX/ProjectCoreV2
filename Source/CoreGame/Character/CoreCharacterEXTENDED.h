@@ -20,6 +20,26 @@ protected:
 	virtual void PawnClientRestart() override;
 public:
 
+#pragma region INPUT
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
+	class UInputAction* MovementAction ;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
+	class UInputAction* LookingAction ;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
+	class UInputAction* JumpAction ;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
+	class UInputAction* FireAction ;
+
+	
+	// Context THAT CONTAINS INPUT ACTIONS CAN HAVE MORE THAN ONE 
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input mapping Context")
+	class UInputMappingContext*BaseMappingContext;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input mapping Context")
+	int32 BaseMappingPriority = 0;
+
+#pragma region endregion 
+
 	ACoreCharacterEXTENDED();
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

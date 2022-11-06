@@ -8,8 +8,9 @@
 #include "Components/ActorComponent.h"
 #include "LocomotionComponent.generated.h"
 
-
-UCLASS(ClassGroup=Movement, BlueprintType,meta=(BlueprintSpawnableComponent))
+class ACoreCharacterEXTENDED;
+//UCLASS(ClassGroup=Movement, BlueprintType,meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType)
 class COREGAME_API ULocomotionComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -28,9 +29,12 @@ private:
 	
 
 public:
+	
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Locomotion Component")
-	ACoreCharacter* CoreCharacterReference;
-	APlayerController * PlayerControllerReference;
+	ACoreCharacterEXTENDED* ExtendedCharacterRef;
+	ACorePlayerController * PlayerControllerReference;
+	ACorePlayerController*GetCorePlayerController();
+	ACoreCharacterEXTENDED*GetEXTENDEDCharacter();
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
 	float TurnRate ;
