@@ -25,13 +25,6 @@ enum class ELocomotionType: uint8
 	FourWayMovement = 2				UMETA(DisplayName = "Four Way (LU =RU = F)"),
 };
 UENUM(BlueprintType)
-enum class EDefaultMovementState: uint8
-{
-	Walk = 0					UMETA(DisplayName = "Walk"),
-	Jog =1						UMETA(DisplayName = "Jog"),
-	Sprint = 2					UMETA(DisplayName = "Sprint"),
-};
-UENUM(BlueprintType)
 enum class ECharacterEquipmentState: uint8
 {
 	
@@ -89,8 +82,8 @@ UENUM(BlueprintType)
 enum class ELocomotionState : uint8
 {
 	Idle = 0		UMETA(DisplayName = "Idle"),
-	Walk =1		UMETA(DisplayName = "Walk"),
-	Jog = 2		UMETA(DisplayName = "Jog"),
+	Walking =1		UMETA(DisplayName = "Walk"),
+	Joging = 2		UMETA(DisplayName = "Jog"),
 	Sprinting = 3		UMETA(DisplayName = "SPrinting"),
 	Pivoting =4		UMETA(DisplayName = "Pivoting"),
 	Jumping =5		UMETA(DisplayName = "Jumping")
@@ -113,19 +106,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable,Category="CoreCharacter")
 	ACorePlayerController* GetCorePlayerController()const;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
-	bool bHasWeaponEquipped ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
-	bool bIsCrouching ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
-	bool bIsSprinting ;
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
-	FVector LookAtLocation ;
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
-	bool bShouldLookAtPickup;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Locomotion")
-	FMaxMovementSpeed DefaultMovementSpeed ;
+
+	
 	//TODO Create A Game State
 	//ACorePlayerState*GetPlayerController();
 
@@ -134,14 +117,7 @@ public:
 	UFUNCTION(BlueprintCallable,Category="Getters")
 	FORCEINLINE UCoreCameraComponent*GetCameraComponent(){return CameraComponent; }
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
-	FLocomotionModes LocomotionModes;
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
-	EDefaultMovementState DefaultMovementState ; 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
-	ECharacterEquipmentState CharacterEquipmentState ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
-	ELocomotionState LocomotionState ;
+
 protected:
 
 	// when ability sysetm component is available then we we want to call this function

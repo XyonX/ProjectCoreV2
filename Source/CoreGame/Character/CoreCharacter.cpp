@@ -54,15 +54,6 @@ ACoreCharacter::ACoreCharacter()
 	MeshComp->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	//CameraComponent->SetRelativeLocation(FVector(-300.0f, 0.0f, 75.0f));
 
-
-	DefaultMovementState =EDefaultMovementState::Walk;
-	
-	BaseEyeHeight = 80.0f;
-    CrouchedEyeHeight = 50.0;
-	DefaultMovementSpeed.Walk = 225;
-	DefaultMovementSpeed.Jog=525;
-	DefaultMovementSpeed.Sprint=600;
-	DefaultMovementSpeed.ADS=225;
 	
 
 	

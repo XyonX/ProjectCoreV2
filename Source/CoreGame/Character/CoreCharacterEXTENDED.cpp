@@ -42,6 +42,13 @@ CreateSessionCompleteDelegate(FOnCreateSessionCompleteDelegate::CreateUObject(th
 			GEngine->AddOnScreenDebugMessage(-1,15.0f,FColor::Red,FString::Printf(TEXT("FoundSubSystem %s"),*OnlineSubsystem->GetSubsystemName().ToString()));
 		}
 	}
+
+	
+	DefaultMovementSpeed.Walk = 225;
+	DefaultMovementSpeed.Jog=525;
+	DefaultMovementSpeed.Sprint=600;
+	DefaultMovementSpeed.ADS=225;
+	
 }
 
 void ACoreCharacterEXTENDED::BeginPlay()
@@ -50,22 +57,11 @@ void ACoreCharacterEXTENDED::BeginPlay()
 	PlayerControllerRef =Cast<ACorePlayerController>( UGameplayStatics::GetPlayerController(GetWorld(),0));
 
 	MovementDelegate.AddDynamic(this,&ACoreCharacterEXTENDED::TurnCharacterToMovementDirection);
-	/*switch (DefaultMovementState)
-	{
-	case EDefaultMovementState::Walk :
-		{
-			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
-		}
-	case EDefaultMovementState::Jog :
-		{
-			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Jog;
-		}
-	case EDefaultMovementState::Sprint :
-		{
-			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Sprint;
-		}
-	}*/
-	GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+	InventorySystemComponent->OnWeaponEquipDelegate.AddDynamic(this,&ACoreCharacterEXTENDED::OnWeaponEquipFunction);
+	OnAdsModeDelegate.BindUFunction(this, FName("OnAdsModeDelegate") );
+	SetDefaultMovementMovementSpeed();
+
+	
 	
 }
 
@@ -91,7 +87,7 @@ void ACoreCharacterEXTENDED::Tick(float DeltaSeconds)
 
 	Super::Tick(DeltaSeconds);
 	FindAimLocation();
-	FindLocomotionState();
+	CalculateCharacterState();
 }
 
 void ACoreCharacterEXTENDED::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -170,8 +166,6 @@ void ACoreCharacterEXTENDED::SetupPlayerInputComponent(UInputComponent* PlayerIn
 	//LocomotionComponent->BindKeyWithFunction(PlayerInputComponent);
 	
 }
-
-
 
 ULocomotionComponent* ACoreCharacterEXTENDED::GetLocomotionComponent()
 {
@@ -280,6 +274,7 @@ void ACoreCharacterEXTENDED::Ads_Pressed()
 	FRotator RelativeRotation (0.0f,0.0f,0.0f);
 	FLatentActionInfo LatentInfo ;
 	UKismetSystemLibrary::MoveComponentTo(CameraComponent,RelativeLcoation,RelativeRotation,true,true,AdsZoomTime,false,EMoveComponentAction::Move, LatentInfo);
+	OnAdsModeDelegate.ExecuteIfBound();
 }
 
 void ACoreCharacterEXTENDED::Ads_Released()
@@ -294,25 +289,37 @@ void ACoreCharacterEXTENDED::Ads_Released()
 	FLatentActionInfo LatentInfo;
 	//LatentInfo.CallbackTarget = this;
 	UKismetSystemLibrary::MoveComponentTo(CameraComponent,TargetLoc,TargetRot,true,true,AdsZoomTime,false,EMoveComponentAction::Move,LatentInfo);
+	OnAdsModeDelegate.ExecuteIfBound();
 }
 
-void ACoreCharacterEXTENDED::FindLocomotionState()
+void ACoreCharacterEXTENDED::OnAdsModeFunction()
 {
-	if(GetCharacterMovement()->Velocity.Length()==0)
+	float PrevMovementSpeed = GetCharacterMovement()->MaxWalkSpeed ;
+	if(bInADSMode)
 	{
-		LocomotionState =ELocomotionState::Idle;
+		GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.ADS;
 	}
-	if(GetCharacterMovement()->Velocity.Length() >10)
+	else
 	{
-		LocomotionState = ELocomotionState::Jog;
+		GetCharacterMovement()->MaxWalkSpeed = PrevMovementSpeed;
 	}
-	/*FVector ActorVelDir = GetMovementComponent()->Velocity/GetMovementComponent()->Velocity.Length();
-	FVector ActorAccDir = GetCharacterMovement()->GetCurrentAcceleration()  /GetCharacterMovement()->GetCurrentAcceleration() .Length();
-	float Dot = FVector::DotProduct(ActorVelDir,ActorAccDir);
-	if(Dot == -0.5)
+}
+
+
+void ACoreCharacterEXTENDED::OnWeaponEquipFunction(AItem_Weapon*Weapon)
+{
+	float PrevMovementSpeed = GetCharacterMovement()->MaxWalkSpeed ;
+	if(bHasWeaponEquipped == true)
 	{
-		LocomotionState = ELocomotionState::Pivoting;
-	}*/
+		GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+	}
+	else
+	{
+		GetCharacterMovement()->MaxWalkSpeed = PrevMovementSpeed;
+	}
+	
+	
+	
 }
 
 void ACoreCharacterEXTENDED::TurnCharacterToMovementDirection(EVelocityDirection VelocityDirectionn)
@@ -380,6 +387,45 @@ FVector ACoreCharacterEXTENDED::FindAimLocation()
 	}
 	bShouldAim =false;
 	return  NullVec;
+}
+
+void ACoreCharacterEXTENDED::SetDefaultMovementMovementSpeed()
+{
+	
+	switch (DefaultMovementState)
+	{
+	case ELocomotionState::Walking :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+		}
+	case ELocomotionState::Joging :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Jog;
+		}
+	case ELocomotionState::Sprinting :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Sprint;
+		}
+	}
+}
+
+void ACoreCharacterEXTENDED::CalculateCharacterState()
+{
+	if(GetCharacterMovement()->MaxWalkSpeed <= 10)
+		LocomotionState = ELocomotionState::Idle;
+	else if (GetCharacterMovement()->MaxWalkSpeed  >= 20.0f)
+	{
+		LocomotionState = LocomotionState = ELocomotionState::Walking;
+	}
+	else if (GetCharacterMovement()->MaxWalkSpeed  > DefaultMovementSpeed.Walk+20)
+	{
+		LocomotionState = LocomotionState = ELocomotionState::Joging;
+	}
+	else if (GetCharacterMovement()->MaxWalkSpeed > DefaultMovementSpeed.Jog +20)
+	{
+		LocomotionState = LocomotionState = ELocomotionState::Sprinting;
+	}
+	
 }
 
 

@@ -165,11 +165,11 @@ void UCoreAnimInstance::FindLocomotionState()
 		float AccLength = AccelerationDirection.Length();
 		if(CoreCharacter->GetCharacterMovement()->MaxWalkSpeed > 300.0f && VelLength> 1 && AccLength>0.5 )
 		{
-			LocomotionState = ELocomotionState::Jog ; 
+			LocomotionState = ELocomotionState::Joging ; 
 		}
 		if(CoreCharacter->GetCharacterMovement()->MaxWalkSpeed > 300.0f && VelLength> 0.5 && AccLength>0.01 )
 		{
-			LocomotionState = ELocomotionState::Walk ; 
+			LocomotionState = ELocomotionState::Walking ; 
 		}
 		
 	}

@@ -17,6 +17,7 @@ class UCoreInteractionComponent;
  */
 UDELEGATE(BlueprintAuthorityOnly)
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMovementDelegate ,EVelocityDirection ,  VelocityDirection );
+DECLARE_DYNAMIC_DELEGATE(FOnAdsModeDelegate);
 UCLASS()
 class COREGAME_API ACoreCharacterEXTENDED : public ACoreCharacter
 {
@@ -76,50 +77,58 @@ public:
 	ACorePlayerController*PlayerControllerRef;
 	ACorePlayerController* GetPlayerController(){return PlayerControllerRef;}
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Movement")
-	bool bIsMovingForward;
+	// Declaration Of Functions
+	
 
+	// MOVEMENT
 	void EnhancedMove (const FInputActionValue & Value);
 	void EnhancedLook (const FInputActionValue & Value);
 	void Crouch_Custom();
 	void UnCrouch_Custom();
 
+
+	//ACTION
 	void PrimaryAttack();
 	void Interact_Character ();
-
 	void EqUnEq_Primary_Character();
 
+	
 	UFUNCTION()
 	void Ads_Pressed();
 	UFUNCTION()
 	void Ads_Released();
-	void FindLocomotionState();
-	//void Move(const struct FInputActionValue & ActionValue);
 
+	
+	//DELEGATES
+	void OnWeaponEquipFunction(AItem_Weapon*Weapon);
+	void OnAdsModeFunction ();
+
+	
+	//void Move(const struct FInputActionValue & ActionValue);
 	/*
 	// OLD INPUT HANDELLING FUNCTIONS 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
-
 	void Turn(float Value);
 	void LookUp(float Value);*/
-	
 	//void MyFirstAction(const FInputActionValue& Value);
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
-	EVelocityDirection VelocityDirection ;
-	
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
-	float TurnRate;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
-	float LookupRate;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
-	FOnMovementDelegate MovementDelegate;
+	// Declaration Of Variable
+
+	// bool
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Movement")
+	bool bIsMovingForward;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+    bool bHasWeaponEquipped ;
+    UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+    bool bIsCrouching ;
+    UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+    bool bIsSprinting ;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
 	bool bWantForwardFacingMovement;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
-	float  ForwardFacingInterpSpeed  ;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
+	bool bShouldLookAtPickup;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
 	bool bWantsToZoom ;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
@@ -130,13 +139,68 @@ public:
 	bool bWeaponShouldIdle;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	bool bWeaponShouldAim ;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
+	bool bShouldAim;
+	
+
+	//Vectors
+    UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
+    FVector LookAtLocation ;
+	// these section is for Logic Related to Character locomotion and IK
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
+	FVector AimLocation_Camera;
+	
+
+
+	//STRUCT
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Locomotion")
+	FMaxMovementSpeed DefaultMovementSpeed ;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	FLocomotionModes LocomotionModes;
+
+	//ENUM
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	ELocomotionState DefaultMovementState ; 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	ECharacterEquipmentState CharacterEquipmentState ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	ELocomotionState LocomotionState ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	EVelocityDirection VelocityDirection ;
+
+	//FLOAT
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	float TurnRate;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	float LookupRate;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	float  ForwardFacingInterpSpeed  ;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
 	float AdsZoomTime ;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
+	float AimRange ;
 
 	
-	void TurnCharacterToMovementDirection(EVelocityDirection VelocityDirectionn);
+	//DELEGATES
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	FOnMovementDelegate MovementDelegate;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	FOnAdsModeDelegate OnAdsModeDelegate ;
 	
-	//these section holds code releated to online subsystem
+	
+	
+	
+
+	// GENERAL FUNCTION
+	
+	void TurnCharacterToMovementDirection(EVelocityDirection VelocityDirectionn);
+	UFUNCTION(BlueprintCallable)
+	FVector FindAimLocation();
+	void SetDefaultMovementMovementSpeed();
+	void CalculateCharacterState ();
+	
+	
+	//******** section holds code releated to online subsystem*********
 	
 	public:
 
@@ -150,17 +214,8 @@ protected:
 private:
 	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate ;
 	
-public:
-
-	// these section is for Logic Related to Character locomotion and IK
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
-	FVector AimLocation_Camera;
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
-	bool bShouldAim;
-	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
-	float AimRange ; 
-	UFUNCTION(BlueprintCallable)
-	FVector FindAimLocation();
+	 
+	
 	 
 	
 };

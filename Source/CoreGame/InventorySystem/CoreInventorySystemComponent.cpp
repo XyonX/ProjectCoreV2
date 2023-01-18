@@ -2,6 +2,7 @@
 
 
 #include "InventorySystem/CoreInventorySystemComponent.h"
+#include "Character/CoreCharacterEXTENDED.h"
 
 #include "InteractionSystem/CoreInteractionComponent.h"
 
@@ -23,7 +24,7 @@ void UCoreInventorySystemComponent::BeginPlay()
 
 	// ...
 	AActor*OwnerActor  = GetOwner();
-	OwnerCharacter = Cast<ACoreCharacter>(OwnerActor);
+	OwnerCharacter = Cast<ACoreCharacterEXTENDED>(OwnerActor);
 	
 }
 
@@ -36,15 +37,16 @@ void UCoreInventorySystemComponent::TickComponent(float DeltaTime, ELevelTick Ti
 	// ...
 }
 
-ACoreCharacter* UCoreInventorySystemComponent::GetOwnerCharacter()
+ACoreCharacterEXTENDED* UCoreInventorySystemComponent::GetOwnerCharacter()
 {
 	AActor*OwnerActor  = GetOwner();
-	OwnerCharacter = Cast<ACoreCharacter>(OwnerActor);
+	OwnerCharacter = Cast<ACoreCharacterEXTENDED>(OwnerActor);
 	return OwnerCharacter ;
 }
 
 void UCoreInventorySystemComponent::EquipWeapon( EWeaponSlot WeaponSlot)
 {
+	
 	if(bHasWeaponEquipped)
 	{
 		//SwapWeapon();
@@ -86,6 +88,7 @@ void UCoreInventorySystemComponent::EquipWeapon( EWeaponSlot WeaponSlot)
 		
 	
 	}
+	OnWeaponEquipDelegate.Broadcast(PlayerEquippedWeapon);
 	
 }
 
@@ -101,7 +104,7 @@ void UCoreInventorySystemComponent::UnEquipWeapon()
 	{
 		GetOwnerCharacter()->PlayAnimMontage(AM_Equip_Idle_Primary,1.0f);
 	}
-	
+	OnWeaponEquipDelegate.Broadcast(PlayerEquippedWeapon);
 }
 
 void UCoreInventorySystemComponent::EquipWeaponFromID(AItem_Weapon* Weapon)

@@ -3,10 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "Components/ActorComponent.h"
 #include "ItemSystem/ItemObjects/Item_Weapon.h"
 #include "CoreInventorySystemComponent.generated.h"
 
+class ACoreCharacterEXTENDED;
 
 UENUM()
 enum EWeaponSlot
@@ -17,6 +19,8 @@ enum EWeaponSlot
 	Melee = 3		UMETA(DisplayName = "Melee"),	
 	
 };
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnWeaponEquipDelegate ,AItem_Weapon* ,  Weapon );
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class COREGAME_API UCoreInventorySystemComponent : public UActorComponent
@@ -46,7 +50,7 @@ public:
 	AItem_Weapon* Weapon2_Secondary;
 	EWeaponSlot EquippedWeaponSlot;
 	FName WeaponIDs[3] ;
-	ACoreCharacter*GetOwnerCharacter();
+	ACoreCharacterEXTENDED*GetOwnerCharacter();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	bool bHasWeaponEquipped ;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
@@ -73,7 +77,7 @@ public:
 
 		return Cast<UDataTable>(StaticLoadObject(UDataTable::StaticClass(), NULL, *Path.ToString()));
 	}
-	ACoreCharacter*OwnerCharacter ;
+	ACoreCharacterEXTENDED*OwnerCharacter ;
 
 
 	// montages
@@ -84,6 +88,8 @@ public:
 	UAnimMontage* AM_Equip_Idle_Primary;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = " Animation Monttage")
 	UAnimMontage* AM_Swap_Primary;
-	
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Delegate")
+	FOnWeaponEquipDelegate OnWeaponEquipDelegate ;
 	
 };

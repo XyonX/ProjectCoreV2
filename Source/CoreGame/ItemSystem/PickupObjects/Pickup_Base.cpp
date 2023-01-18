@@ -95,7 +95,7 @@ void APickup_Base::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 {
 	bCanPickup= true;
 	UE_LOG(LogTemp, Warning, TEXT("Someone Overlapped But not varified ") )
-	ACoreCharacter*CollidedCharacter = Cast<ACoreCharacter>(OtherActor);
+	ACoreCharacterEXTENDED*CollidedCharacter = Cast<ACoreCharacterEXTENDED>(OtherActor);
 	if(CollidedCharacter)
 	{
 		OnPickupCollisionEvent.Broadcast(this);
