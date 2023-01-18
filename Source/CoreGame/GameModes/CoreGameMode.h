@@ -13,5 +13,7 @@ UCLASS()
 class COREGAME_API ACoreGameMode : public AModularGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	//UFUNCTION(Exec,Category="Item Commands")
+	//void ShowSpawnPickups();
 };

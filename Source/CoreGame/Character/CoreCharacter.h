@@ -16,6 +16,85 @@ class UCorePawnComponentExtended;
 class UCoreHealthComponent ;
 class UCoreCameraComponent ;
 
+UENUM(BlueprintType)
+enum class ELocomotionType: uint8
+{
+	
+	Strafing = 0					UMETA(DisplayName = "Strafing"),
+	OrientRotaionToMovement =1		UMETA(DisplayName = "Orient Rotation To Movement"),
+	FourWayMovement = 2				UMETA(DisplayName = "Four Way (LU =RU = F)"),
+};
+UENUM(BlueprintType)
+enum class EDefaultMovementState: uint8
+{
+	Walk = 0					UMETA(DisplayName = "Walk"),
+	Jog =1						UMETA(DisplayName = "Jog"),
+	Sprint = 2					UMETA(DisplayName = "Sprint"),
+};
+UENUM(BlueprintType)
+enum class ECharacterEquipmentState: uint8
+{
+	
+	Unarmed = 0					UMETA(DisplayName = "Unamed"),
+	Armed =1		UMETA(DisplayName = "Armed"),
+	Melee = 2				UMETA(DisplayName = "Melee"),
+	Throwable = 0					UMETA(DisplayName = "Strafing"),
+};
+UENUM(BlueprintType)
+enum class EAnimationSet: uint8
+{
+	LyraAnimation = 0					UMETA(DisplayName = "Default Lyra Animation "),
+	MovementAnimSetPro =1		UMETA(DisplayName = "Movement AnimSet Pro"),
+	MobilityPro = 2				UMETA(DisplayName = "MobilityPro"),
+	RiflePro = 3				UMETA(DisplayName = "RiflePro"),
+};
+
+USTRUCT(BlueprintType)
+struct FLocomotionModes
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadWrite ,EditAnywhere,Category="Locomotion Modes")
+	ELocomotionType UnarmedLocomotionType ;
+	UPROPERTY(BlueprintReadWrite ,EditAnywhere,Category="Locomotion Modes")
+	ELocomotionType ArmedLocomotionType;
+	UPROPERTY(BlueprintReadWrite ,EditAnywhere,Category="Locomotion Modes")
+	EAnimationSet UnarmedAnimationSet;
+	UPROPERTY(BlueprintReadWrite ,EditAnywhere,Category="Locomotion Modes")
+	EAnimationSet ArmedAnimationSet;
+	
+};
+USTRUCT(BlueprintType)
+struct FMaxMovementSpeed  : public FTableRowBase
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	float Walk;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	float Jog;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	float Sprint;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	float ADS;
+	
+};
+UENUM(BlueprintType)
+enum class EVelocityDirection : uint8
+{
+	Forward = 0		UMETA(DisplayName = "Forward"),
+	Backward =1		UMETA(DisplayName = "Backward"),
+	Left = 2		UMETA(DisplayName = "Left"),
+	Right =3		UMETA(DisplayName = "Right")
+};
+UENUM(BlueprintType)
+enum class ELocomotionState : uint8
+{
+	Idle = 0		UMETA(DisplayName = "Idle"),
+	Walk =1		UMETA(DisplayName = "Walk"),
+	Jog = 2		UMETA(DisplayName = "Jog"),
+	Sprinting = 3		UMETA(DisplayName = "SPrinting"),
+	Pivoting =4		UMETA(DisplayName = "Pivoting"),
+	Jumping =5		UMETA(DisplayName = "Jumping")
+};
 
 UCLASS()
 class COREGAME_API ACoreCharacter : public AModularCharacter
@@ -28,19 +107,41 @@ public:
 
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-
-	UPROPERTY()
+	virtual void Tick(float DeltaSeconds) override;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Components")
 	USpringArmComponent*SpringArm ;
 	
 	UFUNCTION(BlueprintCallable,Category="CoreCharacter")
 	ACorePlayerController* GetCorePlayerController()const;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+	bool bHasWeaponEquipped ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+	bool bIsCrouching ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
+	bool bIsSprinting ;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
+	FVector LookAtLocation ;
+	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
+	bool bShouldLookAtPickup;
 
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Locomotion")
+	FMaxMovementSpeed DefaultMovementSpeed ;
 	//TODO Create A Game State
 	//ACorePlayerState*GetPlayerController();
 
 	UFUNCTION(BlueprintCallable,Category="CoreCharacter")
 	UCoreAbilitySystemComponent* GetCoreAbilitySystemComponent();
+	UFUNCTION(BlueprintCallable,Category="Getters")
+	FORCEINLINE UCoreCameraComponent*GetCameraComponent(){return CameraComponent; }
 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	FLocomotionModes LocomotionModes;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	EDefaultMovementState DefaultMovementState ; 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
+	ECharacterEquipmentState CharacterEquipmentState ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	ELocomotionState LocomotionState ;
 protected:
 
 	// when ability sysetm component is available then we we want to call this function
@@ -64,11 +165,17 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, meta=(DisplayName="OnDeathFinished"))
 	void K2_OnDeathFinished();
 	
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Components")
+	UCoreCameraComponent*CameraComponent;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Components")
+	USpringArmComponent*SpringArmADS;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Components")
+    UCorePawnComponentExtended* PawnComponentExtended;
+    UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Components")
+    UCoreHealthComponent*HealthComponent;
 private:
 
-    UCoreCameraComponent*CameraComponent;
-	UCorePawnComponentExtended* PawnComponentExtended;
-	UCoreHealthComponent*HealthComponent;
+   
 	
 	
 };

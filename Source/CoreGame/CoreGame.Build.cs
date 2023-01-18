@@ -30,12 +30,18 @@ public class CoreGame: ModuleRules
 				"GameplayTags",
 				"GameplayTasks",
 				"AIModule",
+				"InputCore",
+				"OnlineSubsystemSteam",
+				"UMG", 
+				"HeadMountedDisplay" ,
+				"OnlineSubsystem",
+				"EnhancedInput"
 			}
 		);
 
 		
 
-		PrivateDependencyModuleNames.AddRange(new string[] {"Core", "CoreUObject", "Engine","OnlineSubsystemSteam","OnlineSubsystem","GameplayTags","InputCore", "EnhancedInput" }); 
+		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" }); 
 
 	} 
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CoreAbilitySystemComponent.h"
 #include "UObject/NoExportTypes.h"
 #include"GameplayTagContainer.h"
 #include "CoreAbility.generated.h"
@@ -25,6 +26,13 @@ public:
 	UFUNCTION(BlueprintNativeEvent,Category="Ability")
 	void OnEndAbility(AActor*Instigator);
 
+	UFUNCTION(BlueprintNativeEvent,Category="Ability")
+	bool CanStart(AActor*Instigator);
+	UFUNCTION()
+	UCoreAbilitySystemComponent*GetOwningComp();
+	bool bIsRunning;
+	UFUNCTION(BlueprintCallable,Category="Ability")
+	bool IsRunning()const;
 protected:
 	//TODO
 	//UFUNCTION(BlueprintCallable,Category="Ability")

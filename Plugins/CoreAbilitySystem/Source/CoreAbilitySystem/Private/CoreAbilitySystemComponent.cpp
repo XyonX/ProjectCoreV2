@@ -53,12 +53,18 @@ bool UCoreAbilitySystemComponent::StartAbility_ByName(AActor* InstigatorActor, F
 	{
 		if(Ability  && Ability->AbilityName == AbilityName)
 		{
-
+			if(!Ability->CanStart(InstigatorActor))
+			{
+				UE_LOG(LogTemp,Warning,TEXT("Ability Couldnt Start :  %s") , *Ability->GetName())
+				continue;
+			}
 			UE_LOG(LogTemp,Warning,TEXT("Ability  Started :  %s") , *Ability->GetName())
 			Ability->OnActivateAbility(InstigatorActor);
 			
 			return true ;
-		}
+			}
+
+		
 	}
 	return false;
 	
@@ -86,6 +92,11 @@ bool UCoreAbilitySystemComponent::StartAbility_Class(AActor* InstigatorActor, TS
 		if(Ability && Ability->GetClass() == AbilityClass)
 			
 		{
+			if(!Ability->CanStart(InstigatorActor))
+			{
+				UE_LOG(LogTemp,Warning,TEXT("Ability Couldnt Start :  %s") , *Ability->GetName())
+				continue;
+			}
 			Ability ->OnActivateAbility(InstigatorActor);
 			UE_LOG(LogTemp,Warning,TEXT("Ability  Started :  %s") , *Ability->GetName())
 			return true ;
@@ -102,8 +113,12 @@ bool UCoreAbilitySystemComponent::StopAbility_Class(AActor* InstigatorActor, TSu
 
 		if(Ability && Ability->IsA(AbilityClass))
 		{
-			Ability ->OnEndAbility(InstigatorActor);
-			return true ;
+			if(Ability->IsRunning())
+			{
+				Ability ->OnEndAbility(InstigatorActor);
+				return true ;
+			}
+			
 		}
 		
 	}

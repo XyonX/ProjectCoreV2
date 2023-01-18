@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CommonPlayerController.h"
+#include "../../../Plugins/CommonGame/Source/Public/CommonPlayerController.h"
+//#include"CommonPlayerController.h"
+#include"GameFramework/PlayerController.h"
 #include "CorePlayerController.generated.h"
 
 /**
@@ -17,8 +19,6 @@ class COREGAME_API ACorePlayerController : public ACommonPlayerController
 public:
 	// for input bindings
 	virtual void SetupInputComponent() override;
-
-
 
 
 
