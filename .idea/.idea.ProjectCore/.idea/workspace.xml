@@ -8,17 +8,22 @@
     <list default="true" id="6f5988d4-2ccf-4feb-a49e-2e44aff29a1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/ABP_Manny_Base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/ABP_Manny_Base.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/BlendSpaces/BS_Manny_Unarmed_strafe_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/BlendSpaces/BS_Manny_Unarmed_strafe_01.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/BlendSpaces/Start/BS_Manny_Unarmed_WalkStart_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/BlendSpaces/Start/BS_Manny_Unarmed_WalkStart_01.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/LinkedLayers/ABP_CustomAnimLayerBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/LinkedLayers/ABP_CustomAnimLayerBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/Locomotion/Unarmed/ABP_UnarmedAnimLayers.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Heroes/Mannequin/Animations/Locomotion/Unarmed/ABP_UnarmedAnimLayers.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Abilities/GA_SprintBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Abilities/GA_SprintBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Abilities/GA_Sprint_Curve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Abilities/GA_Sprint_Curve.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Character/Manny/BP_Hero_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Game/Character/Manny/BP_Hero_Mannequin.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/Animation/CoreAnimInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Animation/CoreAnimInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/CoreGame/AbilitySystem/Abilities/GA_Sprint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/AbilitySystem/Abilities/GA_Sprint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/CoreGame/AbilitySystem/Abilities/GA_Sprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/AbilitySystem/Abilities/GA_Sprint.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/InventorySystem/CoreInventorySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/InventorySystem/CoreInventorySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/InventorySystem/CoreInventorySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/InventorySystem/CoreInventorySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/ItemSystem/PickupObjects/Pickup_Base.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/ItemSystem/PickupObjects/Pickup_Base.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +34,6 @@
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/CoreGame/UHT/LocomotionComponent.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/CoreGame/Animation/AnimationNotify/PickupAnimNotify.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/CoreGame/Animation/AnimationNotify/PickupAnimNotify.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/CoreGame/Animation/AnimationNotify/PickupAnimNotifyState.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -364,7 +368,17 @@
       <workItem from="1673266371981" duration="4497000" />
       <workItem from="1673333916754" duration="1558000" />
       <workItem from="1674045688210" duration="1824000" />
-      <workItem from="1674048849630" duration="5381000" />
+      <workItem from="1674048849630" duration="7847000" />
+      <workItem from="1674102205648" duration="4693000" />
+      <workItem from="1674137526372" duration="1022000" />
+      <workItem from="1674188986328" duration="460000" />
+      <workItem from="1674190479119" duration="715000" />
+      <workItem from="1674191777424" duration="1183000" />
+      <workItem from="1674220343566" duration="836000" />
+      <workItem from="1674224063326" duration="247000" />
+      <workItem from="1674241422131" duration="1310000" />
+      <workItem from="1674482170056" duration="7948000" />
+      <workItem from="1674495334133" duration="3994000" />
     </task>
     <servers />
   </component>

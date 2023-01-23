@@ -89,6 +89,8 @@ public:
 
 	//ACTION
 	void PrimaryAttack();
+	void Fire_Core(AItem_Weapon*Weapon);
+	void FireLineTrace();
 	void Interact_Character ();
 	void EqUnEq_Primary_Character();
 
@@ -125,7 +127,7 @@ public:
     bool bIsCrouching ;
     UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Anim")
     bool bIsSprinting ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animation")
 	bool bWantForwardFacingMovement;
 	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="ControlRIG")
 	bool bShouldLookAtPickup;
@@ -149,11 +151,15 @@ public:
 	// these section is for Logic Related to Character locomotion and IK
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
 	FVector AimLocation_Camera;
+	//UPROPERTY()
+	//FVector2d ViewPortSize2D;
+	
+	
 	
 
 
 	//STRUCT
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Locomotion")
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="Animation")
 	FMaxMovementSpeed DefaultMovementSpeed ;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
 	FLocomotionModes LocomotionModes;
@@ -163,28 +169,28 @@ public:
 	ELocomotionState DefaultMovementState ; 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Animation")
 	ECharacterEquipmentState CharacterEquipmentState ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Animation")
 	ELocomotionState LocomotionState ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Animation")
 	EVelocityDirection VelocityDirection ;
 
 	//FLOAT
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Animation")
 	float TurnRate;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite , Category = "Animation")
 	float LookupRate;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animation")
 	float  ForwardFacingInterpSpeed  ;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animation")
 	float AdsZoomTime ;
 	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="IK")
 	float AimRange ;
 
 	
 	//DELEGATES
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animation")
 	FOnMovementDelegate MovementDelegate;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Locomotion")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animation")
 	FOnAdsModeDelegate OnAdsModeDelegate ;
 	
 	

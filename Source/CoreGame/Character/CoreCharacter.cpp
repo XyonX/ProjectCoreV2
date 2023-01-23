@@ -77,8 +77,15 @@ void ACoreCharacter::Tick(float DeltaSeconds)
 
 ACorePlayerController* ACoreCharacter::GetCorePlayerController() const
 {
-
-	return CastChecked<ACorePlayerController>(Controller);
+	if(Controller)
+	{
+		ACorePlayerController * PlayerController = CastChecked<ACorePlayerController>(Controller);
+		if(PlayerController)
+		{
+			return PlayerController;
+		}
+	}
+	return nullptr;
 	
 }
 

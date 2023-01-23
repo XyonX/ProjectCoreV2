@@ -243,6 +243,8 @@ void ACoreCharacterEXTENDED::PrimaryAttack()
 	//AbilitySystemComp->GainAbility(this,UGA_ProjectileAttack);
 	if(GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Primary Attack Called!"));
+
+	
 }
 
 void ACoreCharacterEXTENDED::Interact_Character()
@@ -303,6 +305,10 @@ void ACoreCharacterEXTENDED::OnAdsModeFunction()
 	{
 		GetCharacterMovement()->MaxWalkSpeed = PrevMovementSpeed;
 	}
+	if(GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Emerald,FString::Printf(TEXT(" ADS Deligate Called")));
+	}
 }
 
 
@@ -316,6 +322,10 @@ void ACoreCharacterEXTENDED::OnWeaponEquipFunction(AItem_Weapon*Weapon)
 	else
 	{
 		GetCharacterMovement()->MaxWalkSpeed = PrevMovementSpeed;
+	}
+	if(GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Emerald,FString::Printf(TEXT(" Weapon Equip Delegate Called")));
 	}
 	
 	
@@ -394,34 +404,59 @@ void ACoreCharacterEXTENDED::SetDefaultMovementMovementSpeed()
 	
 	switch (DefaultMovementState)
 	{
+	case ELocomotionState::Idle :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+			break;
+		}
+		
 	case ELocomotionState::Walking :
 		{
 			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+			break;
 		}
 	case ELocomotionState::Joging :
 		{
 			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Jog;
+			break;
 		}
 	case ELocomotionState::Sprinting :
 		{
 			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Sprint;
+			break;
 		}
+	case ELocomotionState::Jumping :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+			break;
+		}
+	case ELocomotionState::Pivoting :
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Walk;
+			break;
+		}
+	default:
+		{
+			GetCharacterMovement()->MaxWalkSpeed = DefaultMovementSpeed.Jog;
+		}
+		
 	}
 }
 
 void ACoreCharacterEXTENDED::CalculateCharacterState()
 {
-	if(GetCharacterMovement()->MaxWalkSpeed <= 10)
+	float CurrentVelocity = GetCharacterMovement()->Velocity.Length();
+	if(CurrentVelocity <= 10)
 		LocomotionState = ELocomotionState::Idle;
-	else if (GetCharacterMovement()->MaxWalkSpeed  >= 20.0f)
+	else if (CurrentVelocity  >= 20.0f && CurrentVelocity<DefaultMovementSpeed.Jog-10)
 	{
 		LocomotionState = LocomotionState = ELocomotionState::Walking;
 	}
-	else if (GetCharacterMovement()->MaxWalkSpeed  > DefaultMovementSpeed.Walk+20)
+	else if (CurrentVelocity  >= DefaultMovementSpeed.Walk+20 && CurrentVelocity<DefaultMovementSpeed.Sprint-10)
 	{
 		LocomotionState = LocomotionState = ELocomotionState::Joging;
 	}
-	else if (GetCharacterMovement()->MaxWalkSpeed > DefaultMovementSpeed.Jog +20)
+	else if (CurrentVelocity >= DefaultMovementSpeed.Jog +20)
 	{
 		LocomotionState = LocomotionState = ELocomotionState::Sprinting;
 	}
@@ -486,4 +521,184 @@ void ACoreCharacterEXTENDED::MyFirstAction(const FInputActionValue& Value)
 	UE_LOG(LogTemp, Warning, TEXT("%s called with Input Action Value %s (magnitude %f)"), TEXT(__FUNCTION__), *Value.ToString(), Value.GetMagnitude());
 	// Use the GetType() function to determine Value's type, and the [] operator with an index between 0 and 2 to access its data.
 }*/
+/*
+void ACoreCharacterEXTENDED::Fire_Core(AItem_Weapon*Weapon)
+{
+	if(InventorySystemComponent)
+	{
+		AItem_Weapon* PlayerEquippedWeapon = InventorySystemComponent->PlayerEquippedWeapon;
+		if (bHasWeaponEquipped && PlayerEquippedWeapon)
+		{
+			bWeaponShouldIdle =false;
+			EWeaponFireType WeaponFireType = PlayerEquippedWeapon->GetWeaponData()->WeaponFireType;
+			//GetWorld()->GetTimerManager().SetTimer(WeaponPositionTimerHandle,this,&ACoreCharacter::SetWeaponPosition,10.0,false);
 
+			switch (WeaponFireType)
+			{
+
+			case EWeaponFireType::Melee :
+				UE_LOG(LogTemp,Warning,TEXT("Weapon Type  Melee "))
+				if (PlayerEquippedWeapon->GetWeaponData()->FireMontage)
+				{
+					PlayAnimMontage(PlayerEquippedWeapon->GetWeaponData()->FireMontage, 1.0f);
+				}
+				if (PlayerEquippedWeapon->GetWeaponData()->MuzzleFlash )
+				{
+		
+					UGameplayStatics::SpawnEmitterAttached(PlayerEquippedWeapon->GetWeaponData()->MuzzleFlash, PlayerEquippedWeapon->WeaponMesh, PlayerEquippedWeapon->GetWeaponData()->MuzzleSocketName);
+				}
+				if (PlayerEquippedWeapon->GetWeaponData()->FireSound)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), PlayerEquippedWeapon->GetWeaponData()->FireSound,PlayerEquippedWeapon->GetActorLocation());
+				}
+				break;
+			
+			case EWeaponFireType::RayCast:
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Ray Cast Fired!"));
+
+				FireLineTrace();
+				UE_LOG(LogTemp,Warning,TEXT("Weapon Type  Raycast "))
+				if (PlayerEquippedWeapon->GetWeaponData()->FireMontage)
+				{
+					PlayAnimMontage(PlayerEquippedWeapon->GetWeaponData()->FireMontage, 1.0f);
+				}
+				if (PlayerEquippedWeapon->GetWeaponData()->MuzzleFlash )
+				{
+		
+					UGameplayStatics::SpawnEmitterAttached(PlayerEquippedWeapon->GetWeaponData()->MuzzleFlash, PlayerEquippedWeapon->WeaponMesh, PlayerEquippedWeapon->GetWeaponData()->MuzzleSocketName);
+				}
+				if (PlayerEquippedWeapon->GetWeaponData()->FireSound)
+				{
+					UGameplayStatics::PlaySoundAtLocation(GetWorld(), PlayerEquippedWeapon->GetWeaponData()->FireSound,PlayerEquippedWeapon->GetActorLocation());
+				}
+
+				// CHECKING IF Viewport available or not
+			
+				if(GEngine && GEngine->GameViewport)
+				{
+					GEngine->GameViewport->GetViewportSize(ViewPortSize2D);
+				}
+				APlayerController* Pc = Cast<APlayerController>(GetController());
+
+				if (Pc)
+				{
+					if(PlayerEquippedWeapon->GetWeaponData()->FireCameraShake)
+					{
+						Pc->ClientStartCameraShake(PlayerEquippedWeapon->GetWeaponData()->FireCameraShake);
+					}
+				}
+
+
+			
+		
+			}
+		}
+	}
+}
+void ACoreCharacterEXTENDED::FireLineTrace()
+{
+	
+		// cross hair loc 2D
+			FVector2D CrossHairLoc(ViewPortSize2D.X/2,ViewPortSize2D.Y/2);
+
+			// Projecting the 2d onto 3d
+			bViewport3D = UGameplayStatics::DeprojectScreenToWorld(UGameplayStatics::GetPlayerController(this,0),CrossHairLoc,ViewportLoc_3D,ViewportDir_3D);
+			// line tracing
+
+			FHitResult BulletHit;
+			FHitResult BulletHit_ViewPort;
+			FCollisionQueryParams QuerryParam;
+			FCollisionQueryParams QuerryParam_ViewPort;
+			QuerryParam_ViewPort.AddIgnoredActor(this);
+			QuerryParam_ViewPort.AddIgnoredActor(PlayerEquippedWeapon);
+			QuerryParam.AddIgnoredActor(this);
+			QuerryParam.AddIgnoredActor(PlayerEquippedWeapon);
+			QuerryParam.bTraceComplex = true;
+			QuerryParam.bReturnPhysicalMaterial = true;
+
+						
+				// line tracing from muzzle 
+		
+			TraceStart_MUZZLE = PlayerEquippedWeapon->WeaponMesh->GetSocketLocation(PlayerEquippedWeapon->GetWeaponData()->MuzzleSocketName);//PlayerEquippedWeapon->GetMuzzleSocketTransform().GetLocation();
+			FRotator Rotation = PlayerEquippedWeapon->WeaponMesh->GetSocketRotation(PlayerEquippedWeapon->GetWeaponData()->MuzzleSocketName);
+			//FVector RotationAxis = Rotation.GetAxisX();
+			FVector ShootDirection_MUZZLE = Rotation.Vector();
+			TraceEnd_MUZZLE = TraceStart_MUZZLE + (ShootDirection_MUZZLE * PlayerEquippedWeapon->GetWeaponData()->WeaponRange);
+
+			
+			// line trace from viewpoint
+	
+			//GetActorEyesViewPoint(EyeLoc, EyeRot);
+			
+			TraceStart_Viewport =  ViewportLoc_3D ;
+			
+			FVector ShootDirection =ViewportDir_3D;
+			
+			TraceEnd_Viewport = TraceStart_Viewport + (ShootDirection * PlayerEquippedWeapon->GetWeaponData()->WeaponRange);
+
+	
+	
+			if (GetWorld()->LineTraceSingleByChannel(BulletHit, TraceStart_MUZZLE, TraceEnd_Viewport,ECC_Visibility, QuerryParam))
+				
+			{
+				
+					
+					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Line Trace done from  Muzzle to viewport end !"));
+					AActor* HitActor = BulletHit.GetActor();
+					DrawDebugLine(GetWorld(), TraceStart_MUZZLE, TraceEnd_Viewport, FColor::Blue, false, 2.0f);
+					DrawDebugLine(GetWorld(), TraceStart_Viewport, TraceEnd_Viewport, FColor::Blue, false, 2.0f);
+					DrawDebugPoint(GetWorld(), BulletHit.Location, 5.f, FColor::Red, false, 2.f);
+			
+					//UPhysicalMaterial HitMaterial = BulletHit.PhysMaterial;
+			
+					//EPhysicalSurface HitSurface = UPhysicalMaterial::DetermineSurfaceType(BulletHit.PhysMaterial.Get());
+				
+					
+				
+					
+					if(HitActor)
+					{
+						GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("HIT ACTOR AVAILABLE"));
+						WeaponAnimDirection =  UKismetMathLibrary::GetDirectionUnitVector(TraceStart_MUZZLE,HitActor->GetActorLocation());
+						UE_LOG(LogTemp, Warning, TEXT("Hit Actor Name %s"),*HitActor->GetName());
+						UCharacterAttributeComponent*HitActorAttribute =  Cast<UCharacterAttributeComponent>(HitActor->GetComponentByClass(UCharacterAttributeComponent::StaticClass()));
+						if(HitActorAttribute)
+						{
+							float Damage = PlayerEquippedWeapon->GetWeaponData()->Damage;
+							HitActorAttribute->ApplyHealthChange(50);
+								//HitActorAttribute->OnHealthChangeAtrriBute.Broadcast();
+							
+						}
+					}
+					/*switch (HitSurface)
+					{
+					case SurfaceType1:
+		
+					case SurfaceType2:
+						TracedParticleEffect = PlayerEquippedWeapon->ImpactParticle_Critical;
+							break;
+					case SurfaceType3:
+						TracedParticleEffect = PlayerEquippedWeapon->ImpactParticle_Wood;
+						break;
+					case SurfaceType4:
+						TracedParticleEffect = PlayerEquippedWeapon->ImpactParticle_Concrete;
+						break;
+					case SurfaceType5:
+						TracedParticleEffect = PlayerEquippedWeapon->ImpactParticle_Metal;
+						break;
+					default:
+						TracedParticleEffect = PlayerEquippedWeapon->ImpactParticle;
+						break;
+					}*/
+
+				/*	UParticleSystem*TracedParticleEffect=PlayerEquippedWeapon->GetWeaponData()->ImpactParticle;
+					if (TracedParticleEffect && BulletHit.bBlockingHit)
+					{
+						UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), TracedParticleEffect, BulletHit.Location);
+					}
+
+
+			}
+				
+			
+}*/

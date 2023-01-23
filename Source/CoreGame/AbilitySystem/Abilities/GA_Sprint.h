@@ -20,8 +20,15 @@ public:
 	virtual void OnActivateAbility_Implementation(AActor* Instigator) override;
 	virtual void OnEndAbility_Implementation(AActor* Instigator) override;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Ability")
 	float Sprint_Speed = 1000.0f ;
-	float DefaultWalk_Speed =600.0f;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Ability")
+	float DefaultWalk_Speed ;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Ability")
+	bool bWantToUSeCustomSpeed ;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Ability")
+	bool bWantToUSeSameSpeedForWeaponSprint ;
 	
 	UCoreAbilitySystemComponent*GetOwningComponent()const;
 	
