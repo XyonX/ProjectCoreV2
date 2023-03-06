@@ -4,3 +4,6 @@
 [submodule "ProceduralGeneration"]
 	path = ProceduralGeneration
 	url = https://github.com/XyonX/ProceduralGeneration.git
+[submodule "Plugins/CoreUI"]
+	path = Plugins/CoreUI
+	url = https://github.com/username/CoreUI.git
