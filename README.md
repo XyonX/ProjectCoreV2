@@ -29,17 +29,16 @@ Modular  Design Plugin Based
             -  Landscape  Master  Material
             -  2  Material  TrimSheet  Master  Material
             -  World Positioned  Materials
-            -  Many Mooore  materials   and  functions
+            -  Many More  materials   and  functions
      -  ###  CoreUI
         -  Custom  UI Element  implemeted  in  Slate   c++
         -  Every  slate class Has its Corresponding   UMG Wrapper  class
         -  Blueprint Exposoed
         -  Expandable  
-     -  ###  ProceduralGeneration   - (Not  Done)
+     -  ###  ProceduralGeneration   - (Experiemntal)
         -  Similar To Wave function collapse  Algorithm
-        -  Procedural Map Generation premade Meshes
-        -  Various  Algorithms
-        -  
+        -  Procedural Map Generation using premade Meshes
+        -  Various Algorithms to generate the map
 
 
 
