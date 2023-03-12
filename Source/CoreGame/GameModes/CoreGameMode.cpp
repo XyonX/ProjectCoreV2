@@ -3,3 +3,7 @@
 
 #include "GameModes/CoreGameMode.h"
 
+ACoreGameMode::ACoreGameMode()
+{
+	
+}

@@ -14,6 +14,8 @@ class COREGAME_API ACoreGameMode : public AModularGameModeBase
 {
 	GENERATED_BODY()
 
+	ACoreGameMode();
+
 	//UFUNCTION(Exec,Category="Item Commands")
 	//void ShowSpawnPickups();
 };
