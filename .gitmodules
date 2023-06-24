@@ -12,3 +12,6 @@
 [submodule "Plugins/CoreChatSystem"]
 	path = Plugins/CoreChatSystem
 	url = https://github.com/XyonX/CoreChatSystem.git
+[submodule "Plugins/CorePlugin"]
+	path = Plugins/CorePlugin
+	url = https://github.com/XyonX/CorePlugin.git
