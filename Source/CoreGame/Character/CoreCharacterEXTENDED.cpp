@@ -221,6 +221,8 @@ void ACoreCharacterEXTENDED::EnhancedMove(const FInputActionValue& Value)
 
 void ACoreCharacterEXTENDED::EnhancedLook(const FInputActionValue& Value)
 {
+	FString DebugMessage = FString::Printf(TEXT("Velocity X : %f , Y : %f"),Value[0],Value[1]);
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, DebugMessage);
 	AddControllerPitchInput(Value[1]*GetWorld()->DeltaTimeSeconds*LookupRate);
 	AddControllerYawInput(Value[0]*GetWorld()->DeltaTimeSeconds*TurnRate);
 }

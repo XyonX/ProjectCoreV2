@@ -6,7 +6,7 @@
 /**
  * FLyraGameModule
  */
-class FLyraGameModule : public FDefaultGameModuleImpl
+class FCoreGameModule : public FDefaultGameModuleImpl
 {
 	virtual void StartupModule() override
 	{
@@ -17,4 +17,4 @@ class FLyraGameModule : public FDefaultGameModuleImpl
 	}
 };
 
-IMPLEMENT_PRIMARY_GAME_MODULE(FLyraGameModule, LyraGame, "LyraGame");
+IMPLEMENT_PRIMARY_GAME_MODULE(FCoreGameModule, CoreGame, "LyraGame");

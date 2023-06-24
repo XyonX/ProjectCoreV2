@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ModularGameMode.h"
+//#include "UI/CoreHUD.h"
 #include "CoreGameMode.generated.h"
 
 /**
@@ -13,9 +14,12 @@ UCLASS()
 class COREGAME_API ACoreGameMode : public AModularGameModeBase
 {
 	GENERATED_BODY()
-
+	
+public:
+	
 	ACoreGameMode();
 
-	//UFUNCTION(Exec,Category="Item Commands")
-	//void ShowSpawnPickups();
+	//ACoreHUD*CoreHUD;
+
+	
 };
