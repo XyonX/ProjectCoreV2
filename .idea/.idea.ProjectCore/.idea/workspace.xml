@@ -6,51 +6,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f5988d4-2ccf-4feb-a49e-2e44aff29a1d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Helpers/LogHelper.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Helpers/LogHelper.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreChatSystem/CoreChatSystem.uplugin" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreChatSystem/CoreChatSystem.uplugin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/CoreChatSystem.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/CoreChatSystem.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/Private/CoreChatSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/CoreChatSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/Public/CoreChatSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreChatSystem/Source/CoreChatSystem/CoreChatSystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoreMaterials" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Binaries/Win64/UnrealEditor-CorePlugin.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Binaries/Win64/UnrealEditor-CorePlugin.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Binaries/Win64/UnrealEditor-CorePlugin.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Binaries/Win64/UnrealEditor-CorePlugin.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/CorePlugin.cpp.dep.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/CorePlugin.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/CorePlugin.cpp.obj.response" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/CorePlugin.cpp.obj.response.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/LiveCodingInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/LiveCodingInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.dll.response" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.dll.response" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.lib" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.lib.response" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.lib.response" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.suppressed.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.suppressed.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.suppressed.lib" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Intermediate/Build/Win64/UnrealEditor/Development/CorePlugin/UnrealEditor-CorePlugin.suppressed.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/CorePlugin.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/CorePlugin.Build.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreUI" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/CoreUI.uplugin" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/CoreUI.uplugin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/CoreUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/Debug_Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/Debug_Item.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/Debug_Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/Debug_Item.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/STestWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/STestWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/STestWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/STestWidget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/LeafWidgets/Buttons/CoreButton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/LeafWidgets/Buttons/CoreButton.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/LeafWidgets/Buttons/CoreButton.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/LeafWidgets/Buttons/CoreButton.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Button/CoreButtonWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Button/CoreButtonWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Button/CoreButtonWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Button/CoreButtonWidget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Debug/Debug_Item_Widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Debug/Debug_Item_Widget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Debug/Debug_Item_Widget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UMG/Debug/Debug_Item_Widget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/Notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/SBottomBuildingsPanel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/SBottomBuildingsPanel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/TrashCan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/TrashCan.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/Default.rc2.res" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/Default.rc2.res" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/Default.rc2.res.response" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/Default.rc2.res.response" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TopDownController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TopDownController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TopDownPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TopDownPawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/UIActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/UIActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Helpers/DelegateHelper.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Helpers/DelegateHelper.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseGridActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseGridActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseGridActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseGridActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCore.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCore.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Character/CoreCharacterEXTENDED.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/CoreGame.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/CoreGame.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/CoreGameModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/CoreGameModule.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/GameModes/CoreGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/GameModes/CoreGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/GameModes/CoreGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/GameModes/CoreGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CoreGame/Player/CorePlayerState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoreGame/Player/CorePlayerState.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -714,6 +705,17 @@
       <workItem from="1687610276720" duration="5441000" />
       <workItem from="1687617041854" duration="174000" />
       <workItem from="1687617553228" duration="1166000" />
+      <workItem from="1687627581975" duration="1930000" />
+      <workItem from="1687629811885" duration="950000" />
+      <workItem from="1687632749266" duration="1038000" />
+      <workItem from="1687633930332" duration="3612000" />
+      <workItem from="1687664395274" duration="7852000" />
+      <workItem from="1687677852265" duration="4185000" />
+      <workItem from="1687701822273" duration="6794000" />
+      <workItem from="1687753421069" duration="1907000" />
+      <workItem from="1687756657170" duration="762000" />
+      <workItem from="1687758432366" duration="1492000" />
+      <workItem from="1687760374154" duration="877000" />
     </task>
     <task id="LOCAL-00001" summary="Added FindSuitablePieces Function">
       <created>1674538703706</created>
@@ -767,6 +769,11 @@
           <url>file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseProceduralActor.cpp</url>
           <line>504</line>
           <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseGridActor.cpp</url>
+          <line>279</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

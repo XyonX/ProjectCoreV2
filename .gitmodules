@@ -1,5 +1,5 @@
 [submodule "CoreMaterials"]
-	path = CoreMaterials
+	path = Plugins/CoreMaterials
 	url = https://github.com/XyonX/CoreMaterials.git
 [submodule "ProceduralGeneration"]
 	path = ProceduralGeneration
@@ -15,6 +15,3 @@
 [submodule "Plugins/CorePlugin"]
 	path = Plugins/CorePlugin
 	url = https://github.com/XyonX/CorePlugin.git
-[submodule "CoreChatSystem"]
-	path = Plugins/CoreChatSystem
-	url = https://github.com/XyonX/CoreChatSystem.git
