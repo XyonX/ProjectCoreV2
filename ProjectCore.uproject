@@ -75,7 +75,10 @@
 		{
 			"Name": "ProceduralGeneration",
 			"Enabled": true
+		},
+		{
+			"Name": "SlateInsights",
+			"Enabled": true
 		}
-		
 	]
 }
