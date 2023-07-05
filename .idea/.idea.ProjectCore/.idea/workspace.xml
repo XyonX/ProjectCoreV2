@@ -7,36 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6f5988d4-2ccf-4feb-a49e-2e44aff29a1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectCore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreMaterials/Content/Material_Examples/M_Dissolve.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Data/MeshData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Data/MeshData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/Spawnable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/Spawnable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/Spawnable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/Spawnable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/SpawnableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CorePlugin/Source/CorePlugin/Spawnables/SpawnableActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreUI" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/Cards/SBuildingCard.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/TrashCan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/TrashCan.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UI/TopDownIngameScreen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/UI/TopDownIngameScreen.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Binaries/Win64/UnrealEditor-ShooterCoreRuntime.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Blueprint/GameMode/BP_CoreGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Content/Blueprint/GameMode/BP_CoreGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/Default.rc2.res.response.old" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Development/ShooterCoreRuntime/UnrealEditor-ShooterCoreRuntime.exp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TestActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/BP/BP_TestActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Data/DT_MeshProperty.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Data/DT_MeshProperty.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_LeftDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_LeftDown.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_LeftUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_LeftUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_RightDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_RightDown.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_RightUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/C_RightUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/Horizontal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Content/Important_Assets/ChoppedCube_ForX/Horizontal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseProceduralActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseProceduralActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Game/TopDownGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Game/TopDownGameInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Player/TopDownPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProceduralGeneration" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCore.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCore.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseLandscapeActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseLandscapeActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseLandscapeActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/Actors/BaseLandscapeActor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +33,6 @@
     <setting file="file://$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Hud/CoreUIHud.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/CoreUI/Source/CoreUI/Slate/CompoundWidgets/Debug_Item.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Intermediate/Build/Win64/UnrealEditor/Development/ProceduralGeneration/Module.ProceduralGeneration.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Intermediate/Build/Win64/UnrealEditor/Inc/ProceduralGeneration/UHT/BaseProceduralActor.gen.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Intermediate/Build/Win64/UnrealEditor/Inc/ProceduralGeneration/UHT/TileData.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/ProrgramedMeshes/programmedMeshActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/ProceduralGeneration/Source/ProceduralGeneration/ProrgramedMeshes/programmedMeshActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/CoreGame/Animation/AnimationNotify/PickupAnimNotify.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -745,6 +723,24 @@
       <workItem from="1688203500551" duration="871000" />
       <workItem from="1688220388825" duration="2606000" />
       <workItem from="1688224874969" duration="10198000" />
+      <workItem from="1688271204624" duration="5830000" />
+      <workItem from="1688282481910" duration="364000" />
+      <workItem from="1688307138224" duration="4745000" />
+      <workItem from="1688313855075" duration="6231000" />
+      <workItem from="1688358193364" duration="3330000" />
+      <workItem from="1688364307454" duration="4786000" />
+      <workItem from="1688369333942" duration="2927000" />
+      <workItem from="1688372648927" duration="1818000" />
+      <workItem from="1688379066559" duration="828000" />
+      <workItem from="1688380104379" duration="810000" />
+      <workItem from="1688397020209" duration="664000" />
+      <workItem from="1688397892428" duration="879000" />
+      <workItem from="1688398944514" duration="9704000" />
+      <workItem from="1688444926778" duration="3108000" />
+      <workItem from="1688455032914" duration="5176000" />
+      <workItem from="1688482971030" duration="10921000" />
+      <workItem from="1688530374113" duration="5715000" />
+      <workItem from="1688539736221" duration="465000" />
     </task>
     <task id="LOCAL-00001" summary="Added FindSuitablePieces Function">
       <created>1674538703706</created>
