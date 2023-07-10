@@ -3,12 +3,12 @@
 
 #include "Character/LocomotionComponent.h"
 
-#include "EnhancedInputComponent.h"
-#include "InputAction.h"
-#include "Kismet/KismetMaterialLibrary.h"
+//#include "EnhancedInputComponent.h"
+//#include "InputAction.h"
+//#include "Kismet/KismetMaterialLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
-#include "EnhancedInputSubsystems.h"
+//#include "EnhancedInputSubsystems.h"
 #include "Character/CoreCharacterEXTENDED.h"
 
 // Sets default values for this component's properties
@@ -159,7 +159,7 @@ void ULocomotionComponent::LookUp(float Value, ACoreCharacter* Character_Ref)
 	}
 
 }
-
+/*
 void ULocomotionComponent::EnhancedMove(const FInputActionValue& Value)
 {
 	if(PlayerControllerReference && ExtendedCharacterRef)
@@ -252,6 +252,6 @@ void ULocomotionComponent::BindContextWithSubsystem()
 		if(GEngine)
 			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Couldnt Bind Context With Subsystem ,  Error MAYBE PlayerControllerReference NOT FOUND "));	
 	}
-}
+}*/
 
 

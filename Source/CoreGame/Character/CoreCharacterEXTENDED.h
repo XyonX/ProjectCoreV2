@@ -28,7 +28,7 @@ protected:
 	virtual void Tick(float DeltaSeconds) override;
 public:
 
-#pragma region INPUT
+//#pragma region INPUT
 	
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
 	class UInputAction* MovementAction ;
@@ -54,7 +54,7 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input mapping Context")
 	int32 BaseMappingPriority = 0;
 
-#pragma region endregion 
+//#pragma region endregion 
 
 	ACoreCharacterEXTENDED();
 	// Called to bind functionality to input

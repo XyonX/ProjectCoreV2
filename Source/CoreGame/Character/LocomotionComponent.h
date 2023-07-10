@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CoreCharacter.h"
-#include "InputActionValue.h"
+//#include "InputActionValue.h"
 #include "Components/ActorComponent.h"
 #include "LocomotionComponent.generated.h"
 
@@ -40,7 +40,7 @@ public:
 	float TurnRate ;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Character")
 	float LookUpRate ;
-
+/*
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
 	class UInputAction* MovementAction ;
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input Actions")
@@ -54,7 +54,7 @@ public:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input mapping Context")
 	class UInputMappingContext*BaseMappingContext;
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category="Input mapping Context")
-	int32 BaseMappingPriority = 0;
+	int32 BaseMappingPriority = 0;*/
 	
 	
 public:
@@ -73,13 +73,13 @@ public:
 
 	// NEW Functions With Enhanced Input Support
 
-	UFUNCTION()
-	void EnhancedMove (const FInputActionValue & Value);
-	UFUNCTION()
-	void EnhancedLook (const FInputActionValue & Value);
+	//UFUNCTION()
+	//void EnhancedMove (const FInputActionValue & Value);
+	//UFUNCTION()
+	//void EnhancedLook (const FInputActionValue & Value);
 
-	void BindKeyWithFunction(UInputComponent* PlayerInputComponent);
-	void BindContextWithSubsystem();
+	//void BindKeyWithFunction(UInputComponent* PlayerInputComponent);
+	//void BindContextWithSubsystem();
 
 	
 

@@ -57,7 +57,7 @@ void UCoreControlComponent::Input_AbilityInputTagReleased(FGameplayTag InputTag)
 		}
 	}
 }
-
+/*
 void UCoreControlComponent::Input_Move(const FInputActionValue& InputActionValue)
 {
 }
@@ -76,4 +76,4 @@ void UCoreControlComponent::Input_Crouch(const FInputActionValue& InputActionVal
 
 void UCoreControlComponent::Input_AutoRun(const FInputActionValue& InputActionValue)
 {
-}
+}*/
