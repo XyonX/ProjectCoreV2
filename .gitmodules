@@ -12,3 +12,6 @@
 [submodule "Plugins/CorePlugin"]
 	path = Plugins/CorePlugin
 	url = https://github.com/XyonX/CorePlugin.git
+[submodule "Plugins/CoreThirdPerson"]
+	path = Plugins/CoreThirdPerson
+	url = https://github.com/XyonX/CoreThirdPerson.git

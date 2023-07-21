@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/Plugins/CoreChatSystem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreMaterials" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CorePlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreThirdPerson" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreUI" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/ProceduralGeneration" vcs="Git" />
   </component>
