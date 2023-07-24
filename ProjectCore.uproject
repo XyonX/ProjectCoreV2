@@ -33,7 +33,7 @@
 		},
 		{
 			"Name": "GameFeatures",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "ShooterCore",
@@ -75,5 +75,7 @@
 			"Name": "ProceduralGeneration",
 			"Enabled": true
 		}
+		
+		
 	]
 }
