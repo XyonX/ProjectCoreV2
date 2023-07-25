@@ -17,4 +17,4 @@ class FCoreGameModule : public FDefaultGameModuleImpl
 	}
 };
 
-IMPLEMENT_PRIMARY_GAME_MODULE(FCoreGameModule, CoreGame, "LyraGame");
+IMPLEMENT_PRIMARY_GAME_MODULE(FCoreGameModule, CoreGame, "CoreGame");
