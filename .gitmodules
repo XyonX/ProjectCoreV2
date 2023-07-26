@@ -4,8 +4,9 @@
 [submodule "Plugins/CoreUI"]
 	path = Plugins/CoreUI
 	url = https://github.com/XyonX/CoreUI.git
-	
-	
+[submodule "Plugins/ProceduralGeneration"]
+      path = Plugins/ProceduralGeneration
+      url = https://github.com/XyonX/ProceduralGeneration.git	
 [submodule "Plugins/CoreChatSystem"]
 	path = Plugins/CoreChatSystem
 	url = https://github.com/XyonX/CoreChatSystem.git
@@ -15,6 +16,4 @@
 [submodule "Plugins/CoreThirdPerson"]
 	path = Plugins/CoreThirdPerson
 	url = https://github.com/XyonX/CoreThirdPerson.git
-[submodule "Plugins/CoreGameManager"]
-	path = Plugins/CoreGameManager
-	url = https://github.com/XyonX/CoreGameManager.git
+
