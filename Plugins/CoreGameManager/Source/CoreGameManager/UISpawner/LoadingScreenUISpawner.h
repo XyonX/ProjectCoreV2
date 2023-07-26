@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Templates/SharedPointer.h"
 #include "LoadingScreenUISpawner.generated.h"
 
 class ULoadingScreenUI;
@@ -27,15 +28,28 @@ public:
 
 	//Functions
 	void CalculateScreenSize();
+	void ConfigureButtonStyle();
 	void Receiver_OnStartButtonClicked ();
+	UFUNCTION(BlueprintCallable)
+	ULoadingScreenUI* SetupUI ();
 	
 
 protected:
 	
 	//Data
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Defaults")
 	FSlateBrush BackgroundBrush;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Defaults")
 	FSlateBrush StartButtonBrush;
-	FButtonStyle ButtonStyle_Start;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Defaults")
+	FSlateBrush ButtonBrush_Normal;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Defaults")
+	FSlateBrush ButtonBrush_Hovered;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Defaults")
+	FSlateBrush ButtonBrush_Pressed;
+
+	
+	TSharedPtr<FButtonStyle>ButtonStyle_Start;
 
 	float ScreenSize_X;
 	float ScreenSize_Y;
