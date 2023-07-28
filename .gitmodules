@@ -17,3 +17,6 @@
 	path = Plugins/CoreThirdPerson
 	url = https://github.com/XyonX/CoreThirdPerson.git
 
+[submodule "Plugins/CoreGameManager"]
+	path = Plugins/CoreGameManager
+	url = https://github.com/XyonX/CoreGameManager.git
