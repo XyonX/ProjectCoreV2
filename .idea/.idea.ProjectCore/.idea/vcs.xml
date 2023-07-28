@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreChatSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreGameManager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreMaterials" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CorePlugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreThirdPerson" vcs="Git" />

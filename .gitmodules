@@ -20,3 +20,6 @@
 [submodule "Plugins/CoreGameManager"]
 	path = Plugins/CoreGameManager
 	url = https://github.com/XyonX/CoreGameManager.git
+[submodule "Plugins/CoreCharacter"]
+	path = Plugins/CoreCharacter
+	url = https://github.com/XyonX/CoreCharacter.git
