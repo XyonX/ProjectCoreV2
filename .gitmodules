@@ -23,3 +23,6 @@
 [submodule "Plugins/CoreCharacter"]
 	path = Plugins/CoreCharacter
 	url = https://github.com/XyonX/CoreCharacter.git
+[submodule "Plugins/CorePlayer"]
+	path = Plugins/CorePlayer
+	url = https://github.com/XyonX/CorePlayer.git
