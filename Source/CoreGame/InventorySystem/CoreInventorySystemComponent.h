@@ -30,7 +30,7 @@ class COREGAME_API UCoreInventorySystemComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UCoreInventorySystemComponent();
-
+/*
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -90,6 +90,6 @@ public:
 	UAnimMontage* AM_Swap_Primary;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Delegate")
-	FOnWeaponEquipDelegate OnWeaponEquipDelegate ;
+	FOnWeaponEquipDelegate OnWeaponEquipDelegate ;*/
 	
 };

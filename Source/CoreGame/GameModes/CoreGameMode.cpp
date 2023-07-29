@@ -2,7 +2,7 @@
 
 #include "GameModes/CoreGameMode.h"
 //#include "UI/CoreHUD.h"
-#include "Player/CorePlayerState.h"
+//#include "Player/CorePlayerState.h"
 
 ACoreGameMode::ACoreGameMode()
 {

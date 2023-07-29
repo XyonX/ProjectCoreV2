@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Character/CoreCharacter.h"
+//#include "Character/CoreCharacter.h"
 #include "Components/ActorComponent.h"
 #include "CoreInteractionComponent.generated.h"
 
@@ -16,8 +16,8 @@ class COREGAME_API UCoreInteractionComponent : public UActorComponent
 
 public:	
 	// Sets default values for this component's properties
-	UCoreInteractionComponent();
-
+	UCoreInteractionComponent(){};
+/*
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -30,7 +30,7 @@ public:
 	void Interact_Comp();
 	ACoreCharacter * OwnerCharacter ;
 	float InteractionRange ;
-	ACoreCharacter*GetOwnerCharacter();
+	ACoreCharacter*GetOwnerCharacter();*/
 
 		
 };

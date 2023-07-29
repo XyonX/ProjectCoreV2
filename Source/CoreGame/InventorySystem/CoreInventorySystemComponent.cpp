@@ -2,7 +2,7 @@
 
 
 #include "InventorySystem/CoreInventorySystemComponent.h"
-#include "Character/CoreCharacterEXTENDED.h"
+//#include "Character/CoreCharacterEXTENDED.h"
 
 #include "InteractionSystem/CoreInteractionComponent.h"
 
@@ -16,7 +16,7 @@ UCoreInventorySystemComponent::UCoreInventorySystemComponent()
 	// ...
 }
 
-
+/*
 // Called when the game starts
 void UCoreInventorySystemComponent::BeginPlay()
 {

@@ -16,7 +16,7 @@ class COREGAME_API UGA_Sprint : public UCoreAbility
 	GENERATED_BODY()
 
 public:
-
+/*
 	virtual void OnActivateAbility_Implementation(AActor* Instigator) override;
 	virtual void OnEndAbility_Implementation(AActor* Instigator) override;
 
@@ -31,7 +31,7 @@ public:
 	bool bWantToUSeSameSpeedForWeaponSprint ;
 	
 	UCoreAbilitySystemComponent*GetOwningComponent()const;
-	
+	*/
 	
 	
 	

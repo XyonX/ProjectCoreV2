@@ -16,7 +16,7 @@ class COREGAME_API UGA_ProjectileAttack : public UCoreAbility
 
 public:
 	UGA_ProjectileAttack();
-
+/*
 	UPROPERTY(EditAnywhere ,Category="Attack") 
 	TSubclassOf<AActor>ProjectileClass;
 	UPROPERTY(EditAnywhere ,Category="Attack") 
@@ -33,5 +33,5 @@ public:
 	UFUNCTION()
 	void AttackDelay_Elapsed(AActor*Instigator);
 
-	virtual void OnActivateAbility_Implementation(AActor* Instigator) override;
+	virtual void OnActivateAbility_Implementation(AActor* Instigator) override;*/
 };

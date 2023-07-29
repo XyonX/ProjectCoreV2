@@ -14,8 +14,8 @@ UCoreAnimInstance::UCoreAnimInstance()
 {
 	//Root_Yaw_Offset=0.f;
 	//Root_Yaw_Offset_PerFrame=0.0f;
-	PivotTime = -0.75 ;
-	NormalTolerance = 0.0001f ; 
+//	PivotTime = -0.75 ;
+	//NormalTolerance = 0.0001f ; 
 }
 
 /*
@@ -24,7 +24,7 @@ void UCoreAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 
 	Super::NativeThreadSafeUpdateAnimation(DeltaSeconds);
 }*/
-
+/*
 void UCoreAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
@@ -220,4 +220,4 @@ ACoreCharacter* UCoreAnimInstance::GetPlayerCharacter()
 	{
 		return nullptr;
 	}
-}
+}*/

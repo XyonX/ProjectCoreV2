@@ -78,10 +78,6 @@
 		{
 			"Name": "CoreGameManager",
 			"Enabled": true
-		},
-		{
-			"Name": "CorePlayer",
-			"Enabled": false
 		}
 		
 		

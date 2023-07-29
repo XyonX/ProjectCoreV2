@@ -3,10 +3,10 @@
 
 #include "Pickup_Base.h"
 #include "Components/SphereComponent.h"
-#include "Character/CoreCharacter.h"
+//#include "Character/CoreCharacter.h"
 #include "DrawDebugHelpers.h"
 #include "Chaos/CollisionResolution.h"
-#include "Character/CoreCharacterEXTENDED.h"
+//#include "Character/CoreCharacterEXTENDED.h"
 #include "Components/WidgetComponent.h"
 #include "InventorySystem/CoreInventorySystemComponent.h"
 
@@ -92,29 +92,29 @@ void APickup_Base::InitPickup(EItemType ItemTypee, FText Namee, FText UI_Prefixx
 
 void APickup_Base::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
+{/*
 	bCanPickup= true;
 	UE_LOG(LogTemp, Warning, TEXT("Someone Overlapped But not varified ") )
-	ACoreCharacterEXTENDED*CollidedCharacter = Cast<ACoreCharacterEXTENDED>(OtherActor);
+	//ACoreCharacterEXTENDED*CollidedCharacter = Cast<ACoreCharacterEXTENDED>(OtherActor);
 	if(CollidedCharacter)
 	{
 		OnPickupCollisionEvent.Broadcast(this);
 		UE_LOG(LogTemp, Warning, TEXT("Character  Overlapped and varified ") )
 
-		CollidedCharacter->bShouldLookAtPickup = true;
-		CollidedCharacter->LookAtLocation = PickupMesh->GetComponentLocation();
+		//CollidedCharacter->bShouldLookAtPickup = true;
+		//CollidedCharacter->LookAtLocation = PickupMesh->GetComponentLocation();
 		if(InteractWidget)
 		{
 			InteractWidget->SetVisibility(true);
 		}
 
-	}
+	}*/
 	
 }
 
 void APickup_Base::OnComponentEndOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-
+/*
 	bCanPickup = false ;
 	ACoreCharacter*CollidedCharacter = Cast<ACoreCharacter>(OtherActor);
 	UE_LOG(LogTemp, Warning, TEXT("Character leave the  box ") )
@@ -127,7 +127,7 @@ void APickup_Base::OnComponentEndOverlap(class UPrimitiveComponent* OverlappedCo
 			InteractWidget->SetVisibility(false);
 		}
 		
-	}
+	}*/
 	
 }
 

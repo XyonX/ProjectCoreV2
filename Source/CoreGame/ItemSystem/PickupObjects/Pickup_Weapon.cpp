@@ -88,9 +88,9 @@ void APickup_Weapon::Interact_Implementation(APawn* InstigatorPawn)
 			AItem_Weapon*Weapon  ; 
 			Weapon = GetWorld()->SpawnActor<AItem_Weapon>(AItem_Weapon::StaticClass(),InstigatorPawn->GetActorLocation(),InstigatorPawn->GetActorRotation(),SpawnParam);
 			Weapon->Init_Weapon_Item(ID);
-			InventorySystemComp->Weapon1_Primary = Weapon ;
-			InventorySystemComp->Weapon1_Primary->SetHidden(true);
-			InventorySystemComp->EquipWeapon(EWeaponSlot::Primary) ;
+			//InventorySystemComp->Weapon1_Primary = Weapon ;
+			//InventorySystemComp->Weapon1_Primary->SetHidden(true);
+			//InventorySystemComp->EquipWeapon(EWeaponSlot::Primary) ;
 			Destroy();
 			InteractWidget->SetVisibility(false);
 			if(GEngine)

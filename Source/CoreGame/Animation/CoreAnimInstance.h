@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
-#include "Character/CoreCharacter.h"
-#include "Character/CoreCharacterEXTENDED.h"
+//#include "Character/CoreCharacter.h"
+//#include "Character/CoreCharacterEXTENDED.h"
 #include "CoreAnimInstance.generated.h"
 
 /**
@@ -18,7 +18,7 @@ class COREGAME_API UCoreAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 public:
 	UCoreAnimInstance();
-	
+	/*
 	//virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds) override;
 
 	virtual void NativeInitializeAnimation() override;
@@ -37,14 +37,14 @@ public:
 	void UpdateLocationData(float DeltaTime);
 	UFUNCTION(BlueprintCallable, meta = (BlueprintThreadSafe))
 	void UpdateRotationData(float DeltaTime);
-
+/*
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	ACoreCharacterEXTENDED*CoreCharacter ;
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	ACorePlayerController*CoreController;
 	ACorePlayerController*GetPlayerController ();
-	ACoreCharacter*GetPlayerCharacter ();
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
+	ACoreCharacter*GetPlayerCharacter ();*/
+/*	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	FVector WorldLocation ;
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	FRotator WorldRotation ;
@@ -73,11 +73,12 @@ public:
 	float Root_Yaw_Offset;
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	float PivotTime;
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
+	float NormalTolerance ;*/
+/*	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
 	ELocomotionState LocomotionState ;
-	float NormalTolerance ;
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
-	EVelocityDirection VelocityDirection ; 
+	
+//	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="AnimInstance")
+	EVelocityDirection VelocityDirection ; */
 	
 protected:
 	

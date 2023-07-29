@@ -3,10 +3,11 @@
 
 #include "InteractionSystem/CoreInteractionComponent.h"
 
-#include "ItemSystem/ItemObjects/Item_Weapon.h"
-#include "ItemSystem/PickupObjects/Pickup_Weapon.h"
-#include "Kismet/GameplayStatics.h"
+//#include "ItemSystem/ItemObjects/Item_Weapon.h"
+//#include "ItemSystem/PickupObjects/Pickup_Weapon.h"
+//#include "Kismet/GameplayStatics.h"
 
+/*
 // Sets default values for this component's properties
 UCoreInteractionComponent::UCoreInteractionComponent()
 {
@@ -105,4 +106,4 @@ ACoreCharacter* UCoreInteractionComponent::GetOwnerCharacter()
 	OwnerCharacter = Cast<ACoreCharacter>(OwnerActor);
 	return OwnerCharacter;
 }
-
+*/

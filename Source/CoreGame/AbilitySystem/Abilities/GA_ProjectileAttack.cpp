@@ -2,18 +2,16 @@
 
 
 #include "AbilitySystem/Abilities/GA_ProjectileAttack.h"
-
-#include "Camera/CoreCameraComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "Character/CoreCharacter.h"
+//#include "Character/CoreCharacter.h"
 
 UGA_ProjectileAttack::UGA_ProjectileAttack()
 {
-	AttackDelay = 0.2f;
-	HandSocketName = "Muzzlez_01";
+//	AttackDelay = 0.2f;
+//	HandSocketName = "Muzzlez_01";
 
 }
-
+/*
 UWorld* UGA_ProjectileAttack::GetWorld() const
 {
 	UActorComponent*Comp = Cast<UActorComponent> (GetOuter());
@@ -95,4 +93,4 @@ void UGA_ProjectileAttack::OnActivateAbility_Implementation(AActor* Instigator)
 	
 
 	
-}
+}*/

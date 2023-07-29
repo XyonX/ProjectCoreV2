@@ -38,7 +38,7 @@ public class CoreGame: ModuleRules
 				"EnhancedInput"
 			}
 		);
-		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" }); 
+		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore", "CorePlayer" }); 
 
 	}
 

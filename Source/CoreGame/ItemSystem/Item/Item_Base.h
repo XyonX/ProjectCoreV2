@@ -6,7 +6,7 @@
 //#include "../../../../../Source/CoreGame/Player/CorePlayerController.h"
 #include "GameFramework/Actor.h"
 #include"Engine/DataTable.h"
-#include "Player/CorePlayerController.h"
+//#include "Player/CorePlayerController.h"
 #include "Item_Base.generated.h"
 
 class UStaticMeshComponent;
@@ -294,10 +294,10 @@ protected:
 	virtual void BeginPlay() override;
 
 	// only used in sub classes thats why protected
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	ACoreCharacter*MyCharacterRef;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	ACorePlayerController*MyControllerRef;
+/*	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	ACoreCharacter*MyCharacterRef;*/
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	//ACorePlayerController*MyControllerRef;
 	//ACorePlayerController*MyControllerRef;
 	
 

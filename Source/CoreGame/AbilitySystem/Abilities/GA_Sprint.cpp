@@ -3,10 +3,10 @@
 
 #include "AbilitySystem/Abilities/GA_Sprint.h"
 
-#include "Character/CoreCharacter.h"
-#include "Character/CoreCharacterEXTENDED.h"
+//#include "Character/CoreCharacter.h"
+//#include "Character/CoreCharacterEXTENDED.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
+/*
 void UGA_Sprint::OnActivateAbility_Implementation(AActor* Instigator)
 {
 	Super::OnActivateAbility_Implementation(Instigator);
@@ -58,4 +58,4 @@ void UGA_Sprint::OnEndAbility_Implementation(AActor* Instigator)
 UCoreAbilitySystemComponent* UGA_Sprint::GetOwningComponent() const
 {
 	return Cast<UCoreAbilitySystemComponent>(GetOuter());
-}
+}*/

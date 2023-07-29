@@ -25,8 +25,8 @@ class COREGAME_API AItem_Weapon : public AItem_Base
 	AItem_Weapon();
 
 public:
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Reference")
-	class ACoreCharacter*OwnerCharacter;
+	//UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Reference")
+	//class ACoreCharacter*OwnerCharacter;
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;

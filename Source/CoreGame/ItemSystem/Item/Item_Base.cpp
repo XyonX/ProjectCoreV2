@@ -3,7 +3,7 @@
 
 #include "Item_Base.h"
 #include "Kismet/GameplayStatics.h"
-#include"Character/CoreCharacter.h"
+//#include"Character/CoreCharacter.h"
 //#include "../../../../../Source/CoreGame/Character/CoreCharacter.h"
 #include"Components/StaticMeshComponent.h"
 #include"Components/SkeletalMeshComponent.h"
@@ -20,8 +20,8 @@ AItem_Base::AItem_Base()
 void AItem_Base::BeginPlay()
 {
 	Super::BeginPlay();
-	MyCharacterRef = Cast<ACoreCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(),0));
-	MyControllerRef = Cast<ACorePlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
+	//MyCharacterRef = Cast<ACoreCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(),0));
+	//MyControllerRef = Cast<ACorePlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
 	
 	
 }
