@@ -35,3 +35,6 @@
 [submodule "Plugins/CoreInteractionSystem"]
 	path = Plugins/CoreInteractionSystem
 	url = https://github.com/XyonX/CoreInteractionSystem.git
+[submodule "Plugins/CoreItemSystem"]
+	path = Plugins/CoreItemSystem
+	url = https://github.com/XyonX/CoreItemSystem.git
