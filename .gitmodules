@@ -29,3 +29,6 @@
 [submodule "Plugins/CoreAbilitySystem"]
 	path = Plugins/CoreAbilitySystem
 	url = https://github.com/XyonX/CoreAbilitySystem.git
+[submodule "Plugins/CoreInventorySystem"]
+	path = Plugins/CoreInventorySystem
+	url = https://github.com/XyonX/CoreInventorySystem.git
