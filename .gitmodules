@@ -26,3 +26,6 @@
 [submodule "Plugins/CorePlayer"]
 	path = Plugins/CorePlayer
 	url = https://github.com/XyonX/CorePlayer.git
+[submodule "Plugins/CoreAbilitySystem"]
+	path = Plugins/CoreAbilitySystem
+	url = https://github.com/XyonX/CoreAbilitySystem.git
