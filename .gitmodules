@@ -6,10 +6,7 @@
 	url = https://github.com/XyonX/CoreUI.git
 [submodule "Plugins/ProceduralGeneration"]
       path = Plugins/ProceduralGeneration
-      url = https://github.com/XyonX/ProceduralGeneration.git	
-[submodule "Plugins/CoreChatSystem"]
-	path = Plugins/CoreChatSystem
-	url = https://github.com/XyonX/CoreChatSystem.git
+      url = https://github.com/XyonX/ProceduralGeneration.git
 [submodule "Plugins/CorePlugin"]
 	path = Plugins/CorePlugin
 	url = https://github.com/XyonX/CorePlugin.git
@@ -38,3 +35,6 @@
 [submodule "Plugins/CoreItemSystem"]
 	path = Plugins/CoreItemSystem
 	url = https://github.com/XyonX/CoreItemSystem.git
+[submodule "Plugins/CoreChatSystem"]
+	path = Plugins/CoreChatSystem
+	url = https://github.com/XyonX/CoreChatSystem.git
