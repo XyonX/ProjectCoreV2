@@ -2,8 +2,12 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreAbilitySystem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreChatSystem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreGameManager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreInteractionSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreInventorySystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Plugins/CoreItemSystem" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CoreMaterials" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CorePlayer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Plugins/CorePlugin" vcs="Git" />
