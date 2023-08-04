@@ -14,7 +14,8 @@
 				"ModularGameplayActors",
 				"CommonGame",
 				"ModularGameplay",
-				"CoreAbilitySystem"
+				"CoreAbilitySystem",
+				"AIModule"
 			]
 		},
 		{
